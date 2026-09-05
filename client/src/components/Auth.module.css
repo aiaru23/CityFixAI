@@ -1,0 +1,276 @@
+.authBody {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100dvh;
+    justify-content: center;
+    align-items: center;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.authLeft {
+    border-radius: 40px 0;
+    height: 100vh;
+    position: relative;
+    max-height: 1000px;
+    animation: leftSwipe 1.2s ease-in-out;
+}
+
+@keyframes leftSwipe {
+    0% {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.heroBlock {
+    background-image: url('./authPolygon.svg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 93%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gragient {
+    background-color: rgba(255, 255, 255, 0.03);
+    height: 50%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: absolute;
+    left: -2%;
+    top: -10%;
+    -webkit-box-shadow: 0px 5px 29px 93px rgba(255, 255, 255, 0.021);
+    -moz-box-shadow: 0px 5px 29px 93px rgba(255, 255, 255, 0.03);
+    box-shadow: 0px 5px 80px 103px rgba(255, 255, 255, 0.03);
+}
+
+.headerText {
+    position: absolute;
+    top: 8%;
+    left: 15%;
+    font-size: 44px;
+    font-weight: 700;
+    background: #ffffff;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.48) 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+.logo {
+    position: absolute;
+    right: 10%;
+    bottom: -0%;
+    width: 60%;
+}
+
+.authRight {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.loginBody,
+.registerBody {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10px;
+    animation: upSwipe 0.5s ease;
+}
+
+@keyframes upSwipe {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.formText {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 48px;
+}
+
+.formText h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2E3139;
+}
+
+.formText p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #2E3139;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+.inputBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.inputBlock h3 {
+    font-size: 12px;
+    font-weight: 400;
+    color: #2E3139;
+}
+
+.label {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #D3E0FE;
+    border-radius: 30px;
+    transition: border .2s ease;
+}
+
+.label:hover {
+    border-color: #4045EF;
+}
+
+.label:focus-within {
+    border-color: #4045EF;
+}
+
+.icon {
+    color: #899CC9;
+    font-size: 18px;
+    aspect-ratio: 1 / 1;
+}
+
+.label input {
+    width: 100%;
+    font-size: 14px;
+    color: #2E3139;
+    border: none;
+    outline: none;
+    margin: 0 10px;
+}
+
+.viewPassword {
+    height: fit-content;
+    height: 20px;
+}
+
+.labelCheck {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.labelCheck span {
+    color: #18191d;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.loginError {
+    margin: 0 auto;
+    font-size: 14px;
+    color: #421ac3;
+    height: 15px;
+}
+
+.showError {
+    animation: error 0.2s ease;
+}
+
+@keyframes error {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.formButton {
+    background: #6337EF;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    padding: 14px;
+    margin-top: 9px;
+    transition: background 0.2s ease;
+    cursor: no-drop;
+}
+
+.formButton:hover {
+    background: #421ac3;
+}
+
+.orText {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0;
+    color: #425583;
+}
+
+.orText span {
+    width: 100%;
+    height: 1px;
+    background: #425583;
+}
+
+.walletBtn {
+    background: transparent;
+    border: #6337EF 1px solid;
+    color: #6337EF;
+    border-radius: 30px;
+    padding: 14px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+}
+
+.switch {
+    color: #425583;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 auto;
+    margin-top: 21px;
+}
+
+.switch span {
+    font-weight: 500;
+    color: #6337EF;
+    cursor: pointer;
+}
+
+@media (max-width:1700px) {
+    .authLeft {
+        height: 59vw;
+    }
+}

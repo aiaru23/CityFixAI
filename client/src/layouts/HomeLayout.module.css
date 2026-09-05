@@ -1,0 +1,20 @@
+.basicLayout {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.main {
+    overflow-y: scroll;
+    background-color: #F2F5F8;
+    width: 100%;
+    padding: 25px 85px;
+}
+
+@media (max-width: 570px) {
+    .main {
+        padding: 10px;
+    }
+}

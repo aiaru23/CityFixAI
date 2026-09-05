@@ -1,0 +1,185 @@
+.problemModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100dvh;
+    backdrop-filter: blur(2px);
+}
+
+.modalBody {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 25px;
+    animation: showUp .3s ease;
+}
+
+@keyframes showUp {
+    0% {
+        transform: translate(-50%, -47%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+.modalImg {
+    width: 100%;
+    position: relative;
+}
+
+.modalImg img {
+    width: 100vw;
+    max-width: 900px;
+    aspect-ratio: 5 / 2;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+}
+
+.markerModel {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+}
+
+.modalImg div {
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    font-size: 28px;
+}
+
+.problemInfo {
+    background: #16173A;
+    border-radius: 30px;
+    color: #fff;
+    padding: 34px;
+    margin-top: 1rem;
+}
+
+.headerModel {
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+}
+
+.headerText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.headerText p:nth-child(1) {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.headerText p:nth-child(2) {
+    font-size: 25px;
+    font-weight: 700;
+    background: #D9CDFF;
+    background: linear-gradient(88deg, rgba(217, 205, 255, 1) 0%, rgba(99, 55, 239, 1) 37%);
+    background-clip: text;
+    color: transparent;
+    width: fit-content;
+}
+
+.mapDiv {
+    width: 100%;
+    position: relative;
+}
+
+.mapModal {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.dontMap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    z-index: 1000;
+    opacity: 0;
+}
+
+.aiVerd {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.dengerModal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.aiLabel {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.aiLabel sup {
+  font-size: 9px;
+}
+
+.btnAcions {
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.btnAcions button{
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btnAcions button:nth-child(1) {
+    background: #6337EF;
+    color: #fff;
+    border: none;
+}
+
+.btnAcions button:nth-child(2) {
+    background: none;
+    color: #fff;
+    border: none;
+}
+
+.dangerBarModal {
+  width: 50%;
+  background: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 2px;
+  padding: 3px;
+  border-radius: 20px;
+}
+
+.dangerFillModal {
+  height: 100%;
+  padding: 10px;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  border-radius: 20px;
+}

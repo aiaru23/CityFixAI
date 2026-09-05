@@ -1,0 +1,9 @@
+google-generativeai
+solana
+anchorpy 
+python-dotenv 
+requests
+fastapi
+uvicorn
+python-multipart
+groq

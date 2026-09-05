@@ -1,0 +1,399 @@
+/* Create.module.css - сохранен исходный вид на ПК */
+.create {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    backdrop-filter: blur(2px);
+    background: #0000000c;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+}
+
+.createModal {
+    max-height: 1000px;
+    height: 90vh;
+    max-width: 800px;
+    width: 800px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 1rem;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(133, 133, 133, 0.2);
+}
+
+.createModal h3 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.photoFile {
+    width: 50%;
+    height: 40%;
+    background: #E2E3E5;
+    object-fit: cover;
+    background-position: center;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border: 2px dashed #6337EF;
+    transition: background-color .2s, transform .4s, box-shadow .2s;
+    position: relative;
+}
+
+.notImage {
+    box-shadow: 0 6px 16px #ff0000;
+}
+
+.photoFile:hover {
+    background-color: #fff;
+    transform: scale(1.01);
+}
+
+.photoFile svg {
+    font-size: 70px;
+    color: #6337EF;
+}
+
+.photoFile p {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.photoInput {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.hiddenText svg,
+.hiddenText p {
+    display: none;
+}
+
+.selectLocation {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    height: 30%;
+    align-items: center;
+}
+
+.locationLeft {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 500;
+    gap: 10px;
+    transition: box-shadow .2s;
+}
+
+.locationBtn {
+    padding: 15px 13px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    align-items: center;
+    background: transparent;
+    border-radius: 15px;
+    border: 1px solid #899CC9;
+}
+
+.locationBtn>svg {
+    font-size: 27px;
+    color: #6337EF;
+}
+
+.notLocation {
+    box-shadow: 0 6px 16px #ff0000;
+}
+
+.addressText {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: start;
+}
+
+.gpsText {
+    display: flex;
+    gap: 5px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.gpsText svg {
+    color: #6337EF;
+}
+
+.mapSection {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.map {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 15px;
+    transition: box-shadow .2s;
+}
+
+.showMap {
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.createBtn {
+    margin-top: auto;
+    background: #6337EF;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 60px;
+    transition: background .2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.createBtn:hover {
+    background: #4a29b8;
+}
+
+.mapDiv {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.closeMap {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    z-index: 999;
+    border-radius: 10px;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    display: flex;
+    background: #6337EF;
+    color: #fff;
+}
+
+.closeMap svg {
+    font-size: 36px;
+}
+
+.bigMap {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-height: 900px) {
+    .createModal {
+        height: 99vh;
+        overflow: scroll;
+    }
+}
+
+@media (max-width: 1500px) {
+    .createModal {
+        max-width: 600px;
+        width: 600px;
+    }
+}
+
+/* ===== АДАПТИВНЫЕ СТИЛИ ТОЛЬКО ДЛЯ МОБИЛЬНЫХ ===== */
+@media (max-width: 767px) {
+    .create {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    
+    .createModal {
+        max-width: 95%;
+        width: 95%;
+        height: auto;
+        max-height: 85vh;
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .createModal h3 {
+        font-size: 24px;
+    }
+    
+    .photoFile {
+        width: 80%;
+        height: auto;
+        min-height: 180px;
+        aspect-ratio: 1 / 0.8;
+    }
+    
+    .photoFile svg {
+        font-size: 50px;
+    }
+    
+    .photoFile p {
+        font-size: 16px;
+    }
+    
+    .selectLocation {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+    }
+    
+    .locationLeft {
+        font-size: 16px;
+        width: 100%;
+    }
+    
+    .locationBtn {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+    
+    .locationBtn > svg {
+        font-size: 22px;
+    }
+    
+    .addressText {
+        font-size: 13px;
+        -webkit-line-clamp: 2;
+    }
+    
+    .gpsText {
+        font-size: 13px;
+    }
+    
+    .mapSection {
+        width: 100%;
+    }
+    
+    .map {
+        aspect-ratio: 1/1;
+    }
+    
+    .createBtn {
+        margin-top: 10px;
+        padding: 12px 30px;
+        font-size: 14px;
+        width: auto;
+    }
+    
+    .createBtn img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .closeMap {
+        top: 10px;
+        right: 10px;
+        padding: 6px;
+    }
+    
+    .closeMap svg {
+        font-size: 24px;
+    }
+}
+
+/* Для очень маленьких телефонов */
+@media (max-width: 480px) {
+    .createModal h3 {
+        font-size: 20px;
+    }
+    
+    .photoFile {
+        width: 90%;
+        min-height: 150px;
+    }
+    
+    .photoFile svg {
+        font-size: 40px;
+    }
+    
+    .photoFile p {
+        font-size: 14px;
+    }
+    
+    .locationBtn {
+        padding: 8px 10px;
+    }
+    
+    .locationBtn > svg {
+        font-size: 20px;
+    }
+    
+    .addressText {
+        font-size: 11px;
+    }
+    
+    .gpsText {
+        font-size: 11px;
+    }
+    
+    .createBtn {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+}
+
+/* Для ландшафтной ориентации на мобильных */
+@media (max-width: 767px) and (orientation: landscape) {
+    .createModal {
+        max-height: 90vh;
+    }
+    
+    .photoFile {
+        width: 60%;
+        min-height: 120px;
+    }
+    
+    .selectLocation {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .locationLeft {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,425 @@
+/* NotFound.module.css (картинки прижаты к краям) */
+.notFoundPage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Декоративные изображения по бокам - прижаты к краям */
+.leftDecoration,
+.rightDecoration {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.leftDecoration {
+    justify-content: flex-start;
+}
+
+.rightDecoration {
+    justify-content: flex-end;
+}
+
+.leftImage,
+.rightImage {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Основной контент */
+.mainSection {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 50px 60px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.6s ease-out;
+    max-width: 500px;
+    width: 100%;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content h3 {
+    font-size: 120px;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(135deg, #6337EF 0%, #4a29b8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.content h4 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+.content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.backBtn,
+.homeBtn {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.backBtn {
+    background: #fff;
+    color: #6337EF;
+    border: 2px solid #6337EF;
+}
+
+.backBtn:hover {
+    background: #6337EF;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 55, 239, 0.3);
+}
+
+.homeBtn {
+    background: #6337EF;
+    color: #fff;
+}
+
+.homeBtn:hover {
+    background: #4a29b8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 55, 239, 0.3);
+}
+
+.backBtn:active,
+.homeBtn:active {
+    transform: translateY(0);
+}
+
+/* ===== АДАПТИВНЫЕ СТИЛИ ===== */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+    .leftImage,
+    .rightImage {
+        max-width: 200px;
+        width: auto;
+        height: auto;
+        max-height: 100vh;
+        object-fit: contain;
+    }
+    
+    .content {
+        padding: 40px 50px;
+    }
+    
+    .content h3 {
+        font-size: 100px;
+    }
+    
+    .content h4 {
+        font-size: 24px;
+    }
+    
+    .content p {
+        font-size: 15px;
+    }
+}
+
+/* Мобильные устройства - скрываем картинки */
+@media (max-width: 768px) {
+    .leftDecoration,
+    .rightDecoration {
+        display: none;
+    }
+    
+    .mainSection {
+        flex: none;
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .content {
+        padding: 30px 25px;
+        max-width: 90%;
+    }
+    
+    .content h3 {
+        font-size: 80px;
+    }
+    
+    .content h4 {
+        font-size: 20px;
+        margin: 15px 0 8px;
+    }
+    
+    .content p {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    
+    .buttons {
+        gap: 12px;
+    }
+    
+    .backBtn,
+    .homeBtn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+    .mainSection {
+        padding: 15px;
+    }
+    
+    .content {
+        padding: 25px 20px;
+    }
+    
+    .content h3 {
+        font-size: 60px;
+    }
+    
+    .content h4 {
+        font-size: 18px;
+    }
+    
+    .content p {
+        font-size: 13px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .backBtn,
+    .homeBtn {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+/* Очень маленькие телефоны */
+@media (max-width: 380px) {
+    .content {
+        padding: 20px 15px;
+    }
+    
+    .content h3 {
+        font-size: 50px;
+    }
+    
+    .content h4 {
+        font-size: 16px;
+    }
+    
+    .content p {
+        font-size: 12px;
+    }
+}
+
+/* Планшеты в ландшафтной ориентации */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    .leftImage,
+    .rightImage {
+        max-width: 180px;
+    }
+    
+    .content {
+        padding: 30px 40px;
+    }
+    
+    .content h3 {
+        font-size: 80px;
+    }
+}
+
+/* Мобильные в ландшафтной ориентации */
+@media (max-width: 768px) and (orientation: landscape) {
+    .leftDecoration,
+    .rightDecoration {
+        display: none;
+    }
+    
+    .mainSection {
+        padding: 30px;
+    }
+    
+    .content {
+        padding: 20px 30px;
+    }
+    
+    .content h3 {
+        font-size: 60px;
+    }
+    
+    .content h4 {
+        font-size: 18px;
+        margin: 10px 0 5px;
+    }
+    
+    .content p {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+    
+    .buttons {
+        flex-direction: row;
+    }
+    
+    .backBtn,
+    .homeBtn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+/* Большие экраны */
+@media (min-width: 1600px) {
+    .leftImage,
+    .rightImage {
+        width: auto;
+        height: 100vh;
+    }
+    
+    .content {
+        padding: 60px 80px;
+        max-width: 600px;
+    }
+    
+    .content h3 {
+        font-size: 150px;
+    }
+    
+    .content h4 {
+        font-size: 32px;
+    }
+    
+    .content p {
+        font-size: 18px;
+    }
+    
+    .backBtn,
+    .homeBtn {
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+}
+
+/* Для экранов с высотой меньше 600px */
+@media (max-height: 600px) {
+    .leftImage,
+    .rightImage {
+        height: 100%;
+        width: auto;
+    }
+    
+    .content {
+        padding: 20px 30px;
+    }
+    
+    .content h3 {
+        font-size: 60px;
+    }
+    
+    .content h4 {
+        font-size: 18px;
+        margin: 10px 0 5px;
+    }
+    
+    .content p {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Улучшенная поддержка touch-устройств */
+@media (hover: none) and (pointer: coarse) {
+    .backBtn,
+    .homeBtn {
+        padding: 14px 24px;
+    }
+    
+    .backBtn:active,
+    .homeBtn:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Убираем отступы у body для этой страницы */
+:global(body) {
+    margin: 0;
+    padding: 0;
+}
+
+/* Добавление поддержки безопасной зоны для iPhone */
+@supports (padding: max(0px)) {
+    .notFoundPage {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

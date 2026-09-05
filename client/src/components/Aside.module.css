@@ -1,0 +1,302 @@
+/* Aside.module.css (адаптивная версия) */
+.aside {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    padding: 16px 0 0 19px;
+    position: relative;
+    z-index: 1;
+    background-color: #F2F5F8;
+    transition: transform 0.3s ease;
+}
+
+.logoImg {
+    width: 60%;
+    margin-left: 10px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #252F40;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.Linkactive {
+    width: 110%;
+    background-color: #fff;
+    padding: 9px 13px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 7px 10px 2px rgba(58, 75, 88, 0.07);
+    -moz-box-shadow: 0px 7px 10px 2px rgba(58, 75, 88, 0.07);
+    box-shadow: 0px 7px 10px 2px rgba(58, 75, 88, 0.07);
+}
+
+.Linkactive .linkIcon {
+    background: #6337EF;
+}
+
+.Linkactive svg {
+    font-size: 44px !important;
+    color: #fff;
+}
+
+.linkIcon {
+    color: #899CC9;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 3px 10px 2px rgba(34, 60, 80, 0.14);
+    -moz-box-shadow: 0px 3px 10px 2px rgba(34, 60, 80, 0.14);
+    box-shadow: 0px 3px 10px 2px rgba(34, 60, 80, 0.14);
+}
+
+.link svg {
+    font-size: 28px;
+    margin: 5px;
+}
+
+.wallet-adapter-dropdown {
+    position: absolute;
+    bottom: 0;
+}
+
+/* Адаптивные стили для планшетов */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .aside {
+        width: 280px;
+        gap: 30px;
+        padding: 16px 0 0 15px;
+    }
+    
+    .logoImg {
+        width: 70%;
+    }
+    
+    .link {
+        gap: 12px;
+        font-size: 13px;
+    }
+    
+    .link svg {
+        font-size: 24px;
+    }
+    
+    .Linkactive svg {
+        font-size: 38px !important;
+    }
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .aside {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 280px;
+        z-index: 1000;
+        background-color: #F2F5F8;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .mobileAside {
+        position: fixed;
+    }
+    
+    .mobileOpen {
+        transform: translateX(0);
+    }
+    
+    .mobileClosed {
+        transform: translateX(-100%);
+    }
+    
+    .logoImg {
+        width: 80%;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+    
+    .closeBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #6337EF;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+    }
+    
+    .closeBtn:hover {
+        transform: scale(1.1);
+    }
+    
+    .hamburger {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 999;
+        background: #6337EF;
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s ease;
+    }
+    
+    .hamburger svg {
+        font-size: 24px;
+        color: white;
+    }
+    
+    .hamburger:hover {
+        background: #4a29b8;
+        transform: scale(1.05);
+    }
+    
+    .hamburger:active {
+        transform: scale(0.95);
+    }
+    
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .links {
+        margin-top: 60px;
+        gap: 20px;
+    }
+    
+    .link {
+        padding: 10px 16px;
+        margin-right: 10px;
+        border-radius: 8px;
+    }
+    
+    .link:hover {
+        background-color: rgba(99, 55, 239, 0.1);
+    }
+    
+    .Linkactive {
+        width: calc(100% - 20px);
+        margin-right: 10px;
+    }
+}
+
+/* Для очень маленьких телефонов */
+@media (max-width: 480px) {
+    .aside {
+        width: 260px;
+    }
+    
+    .hamburger {
+        top: 15px;
+        left: 15px;
+        padding: 10px;
+    }
+    
+    .hamburger svg {
+        font-size: 20px;
+    }
+    
+    .logoImg {
+        width: 70%;
+    }
+    
+    .link {
+        gap: 12px;
+        font-size: 14px;
+    }
+    
+    .link svg {
+        font-size: 22px;
+    }
+    
+    .Linkactive svg {
+        font-size: 36px !important;
+    }
+}
+
+/* Для ландшафтной ориентации на мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+    .aside {
+        width: 260px;
+        overflow-y: auto;
+    }
+    
+    .links {
+        gap: 15px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .link {
+        padding: 8px 16px;
+    }
+    
+    .logoImg {
+        margin-top: 10px;
+        width: 60%;
+    }
+}
+
+/* Анимация для гамбургер меню */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
